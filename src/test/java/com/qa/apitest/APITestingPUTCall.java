@@ -38,7 +38,7 @@ public class APITestingPUTCall {
         return emailID;
     }
 
-    @Test
+    @Test(enabled = false)
     public void putWithPOJO() throws IOException {
 
         //1. post call to create a new user

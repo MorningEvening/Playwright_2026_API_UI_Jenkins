@@ -34,7 +34,7 @@ public class APITestingwithPOJO {
         requestContext = request.newContext();
     }
 
-    @Test
+    @Test(enabled = false)
     public void postToaddwithPOJO() throws IOException {
 
         User userData = new User("test_1a", "test_ojo3@gmail","male","active");

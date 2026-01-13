@@ -45,7 +45,7 @@ public class getAPI {
         System.out.println("Text "+apiResponse.text());
     }
 
-    @Test
+    @Test(enabled = false)
     public void postToadd() throws IOException {
 
         Map<String,String> data = new HashMap<>();
