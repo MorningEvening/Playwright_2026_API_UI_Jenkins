@@ -3,6 +3,7 @@
 
     <listeners>
         <listener class-name="util.ExtentReportListener"/>
+        <listener class-name="util.TestAllureListener"></listener>
     </listeners>
     <test name="Test1">
         <classes>
