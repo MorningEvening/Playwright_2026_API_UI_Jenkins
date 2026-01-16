@@ -27,10 +27,8 @@ jobs:
         with:
           name: surefire-reports
           path: target/surefire-reports
-      - name: Build Allure Report
-        uses: simple-elf/allure-report-action@v1.7
-        if: always()
+      - name: Generate Allure Report
+        uses: simple-elf/allure-report-action@v2
         with:
-          allure_results: allure-results
-          gh_pages: gh-pages-history
-          allure_history: allure-history
+          results: target/allure-results
+
