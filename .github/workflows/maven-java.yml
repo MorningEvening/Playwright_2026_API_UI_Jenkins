@@ -20,7 +20,7 @@ jobs:
           java-version: "11"
           cache: maven
       - name: Run tests with Maven
-        run: mvn clean test
+        run: mvn clean test -DsuiteXmlFile=testNG_tests.xml
       - name: Upload Surefire Test Reports
         if: always()
         uses: actions/upload-artifact@v4
