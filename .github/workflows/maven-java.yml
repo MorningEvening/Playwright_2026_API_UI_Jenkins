@@ -27,6 +27,14 @@ jobs:
         with:
           name: surefire-reports
           path: target/surefire-reports
+      - name: Publish Test Report
+        uses: starburstdata/action-testng-report@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          report_paths: "**/target/surefire-reports/testng-results.xml"
+          show_skipped: true
+
+
 #      - name: Generate Allure Report
 #        uses: simple-elf/allure-report-action@v1.7
 #        with:
