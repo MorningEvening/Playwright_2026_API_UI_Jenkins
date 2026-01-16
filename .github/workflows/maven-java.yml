@@ -28,7 +28,7 @@ jobs:
           name: surefire-reports
           path: target/surefire-reports
       - name: Generate Allure Report
-        uses: simple-elf/allure-report-action@v2
+        uses: simple-elf/allure-report-action@v1.7
         with:
           results: target/allure-results
 
