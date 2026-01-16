@@ -1,5 +1,5 @@
+---
 name: Java CI with Maven
-
 on:
   push:
     branches:
@@ -7,28 +7,30 @@ on:
   pull_request:
     branches:
       - main
-
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-
       - name: Set up JDK 11
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: "11"
           cache: maven
-
       - name: Run tests with Maven
         run: mvn clean test
-
       - name: Upload Surefire Test Reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: surefire-reports
           path: target/surefire-reports
+      - name: Build Allure Report
+        uses: simple-elf/allure-report-action@v1.7
+        if: always()
+        with:
+          allure_results: allure-results
+          gh_pages: gh-pages-history
+          allure_history: allure-history
